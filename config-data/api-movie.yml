@@ -13,8 +13,8 @@ spring:
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/movie
-    username: usr-movie
-    password: pwd-movie
+    username: root
+    password: root
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
