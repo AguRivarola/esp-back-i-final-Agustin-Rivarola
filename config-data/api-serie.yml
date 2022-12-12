@@ -12,8 +12,6 @@ spring:
     name: api-serie
   data:
     mongodb:
-      username: usrmongo
-      password: pwdmongo
       database: seriedevmongo
       port: 27017
       host: localhost
