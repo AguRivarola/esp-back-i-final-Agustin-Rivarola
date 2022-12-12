@@ -4,8 +4,8 @@ server:
 spring:
   application:
     name: gateway
-  cloud:    
-    gateway:      
+  cloud:
+    gateway:
       discovery:
         locator:
           enabled: true
@@ -18,22 +18,26 @@ spring:
           uri: lb://api-movie
           predicates:
             - Path=/api/v1/movies/**
+        - id: msserie
+          uri: lb://api-serie
+          predicates:
+            - Path=/api/v1/series/**
 
 info:
   app:
     name: ${spring.application.name}
 
 eureka:
-   client:
-      registerWithEureka: false
-      fetchRegistry: true
-      serviceURL:
-         defaultZone: http://localhost:8761/eureka
+  client:
+    registerWithEureka: false
+    fetchRegistry: true
+    serviceURL:
+      defaultZone: http://localhost:8761/eureka
 management:
-   endpoint:
-      gateway:
-         enabled: true
-   endpoints:
-      web:
-         exposure:
-            include: gateway
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway
