@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -12,6 +13,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CatalogDto {
-    private List<SerieDto> serieDtoList;
-    private List<MovieDto> movieDtoList;
+    private List<SerieDto> serieDtoList = new ArrayList<>();
+    private List<MovieDto> movieDtoList = new ArrayList<>();
 }

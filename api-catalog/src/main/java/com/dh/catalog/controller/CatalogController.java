@@ -1,6 +1,7 @@
 package com.dh.catalog.controller;
 
 import com.dh.catalog.client.MovieServiceClient;
+import com.dh.catalog.model.dto.CatalogDto;
 import com.dh.catalog.model.dto.MovieDto;
 import com.dh.catalog.service.CatalogService;
 import org.springframework.http.ResponseEntity;
@@ -21,9 +22,13 @@ public class CatalogController {
 		this.catalogService = catalogService;
 	}
 
-	@GetMapping("/{genre}")
-	ResponseEntity<List<MovieDto>> getGenre(@PathVariable String genre) {
-		return ResponseEntity.ok(catalogService);
+	@GetMapping("/online/{genre}")
+	ResponseEntity<CatalogDto> getGenre(@PathVariable String genre) {
+		return ResponseEntity.ok(catalogService.getCatalogByGenre(genre));
+	}
+	@GetMapping("/offline/{genre}")
+	ResponseEntity<CatalogDto> getGenreOffline(@PathVariable String genre) {
+		return ResponseEntity.ok(catalogService.getCatalogoByGenreOfline(genre));
 	}
 
 }

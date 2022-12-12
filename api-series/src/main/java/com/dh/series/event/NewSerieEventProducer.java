@@ -3,17 +3,12 @@ package com.dh.series.event;
 import com.dh.series.config.RabbitMQSenderConfig;
 import com.dh.series.model.Serie;
 import com.dh.series.model.dto.SerieDto;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
 
-import java.io.Serial;
-import java.io.Serializable;
+
 
 @Component
 @Slf4j
